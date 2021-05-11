@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import emailjs from 'emailjs-com'
+import Recaptcha from "react-recaptcha";
+
+
+
 
 const initialState = {
   name: '',
@@ -18,8 +22,9 @@ export const Contact = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
+
     console.log(name, tel, message)
-    // alert(name + tel + message)
+
     emailjs
       .sendForm(
         '', 'template_xhpt6ds', e.target, ''
@@ -92,22 +97,38 @@ export const Contact = (props) => {
                   ></textarea>
                   <p className='help-block text-danger'></p>
                 </div>
+                {/*  reCaptcha */}
+                {/*<div className="form-group">*/}
+                {/*  <div className="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"*/}
+                {/*       data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>*/}
+                {/*  <div className="text-danger" id="recaptchaError"></div>*/}
+                {/*</div>*/}
+
+
+
                 <div id='success'></div>
-                <button type='submit' className='btn btn-custom btn-lg'>
+                <button type='submit' className='btn btn-custom btn-lg g-recaptcha' data-recaptcha="true">
                   Відправити повідомлення
                 </button>
+
+                {/*<button className="g-recaptcha btn btn-custom btn-lg"*/}
+                {/*        data-sitekey="r6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"*/}
+                {/*        data-callback='onSubmit'*/}
+                {/*        data-action='submit'>Submit*/}
+                {/*</button>*/}
+
               </form>
             </div>
           </div>
           <div className='col-md-3 col-md-offset-1 contact-info'>
             <div className='contact-item'>
               <h3>Контакти</h3>
-              {/*<p>*/}
-              {/*  <span>*/}
-              {/*    <i className='fa fa-map-marker'></i> Address*/}
-              {/*  </span>*/}
-              {/*  {props.data ? props.data.address : 'loading'}*/}
-              {/*</p>*/}
+              <p>
+                <span>
+                  <i className='fa fa-map-marker'></i> Адреса
+                </span>
+                {props.data ? props.data.address : 'loading'}
+              </p>
             </div>
             <div className='contact-item'>
               <p>
