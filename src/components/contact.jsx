@@ -3,11 +3,11 @@ import emailjs from 'emailjs-com'
 
 const initialState = {
   name: '',
-  email: '',
+  tel: '',
   message: '',
 }
 export const Contact = (props) => {
-  const [{ name, email, message }, setState] = useState(initialState)
+  const [{ name, tel, message }, setState] = useState(initialState)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -17,20 +17,25 @@ export const Contact = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(name, email, message)
+
+    console.log(name, tel, message)
+    // alert(name + tel + message)
     emailjs
       .sendForm(
-        'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID'
+        '', 'template_xhpt6ds', e.target, ''
       )
       .then(
         (result) => {
           console.log(result.text)
           clearState()
+          alert("Дякуємо, ми зв'яжемося з вами якнайшвидше")
         },
         (error) => {
           console.log(error.text)
         }
       )
+
+
   }
   return (
     <div>
@@ -41,7 +46,7 @@ export const Contact = (props) => {
               <div className='section-title'>
                 <h2>Запит</h2>
                 <p>
-                  Залиште свої контактні данні та задайте питання
+                  Залиште свої контактні данні і ми зв'яжемося з вами
                 </p>
               </div>
               <form name='sentMessage' validate onSubmit={handleSubmit}>
@@ -63,11 +68,12 @@ export const Contact = (props) => {
                   <div className='col-md-6'>
                     <div className='form-group'>
                       <input
-                        type='email'
-                        id='email'
-                        name='email'
+                        type='tel'
+                        id='tel'
+                        name='tel'
+                        pattern="[0]{1}[0-9]{9}"
                         className='form-control'
-                        placeholder='Email'
+                        placeholder='Телефон у форматі 0912345678'
                         required
                         onChange={handleChange}
                       />
@@ -82,7 +88,6 @@ export const Contact = (props) => {
                     className='form-control'
                     rows='4'
                     placeholder='Повідомлення'
-                    required
                     onChange={handleChange}
                   ></textarea>
                   <p className='help-block text-danger'></p>
@@ -119,7 +124,8 @@ export const Contact = (props) => {
               <p>
                 <span>
                   <i className='fa fa-mobile-phone'></i> Telegram
-                </span>
+                </span>{' '}
+                098-523-42-53
               </p>
             </div>
             <div className='contact-item'>
@@ -157,13 +163,7 @@ export const Contact = (props) => {
           </div>
         </div>
       </div>
-      <div id='footer'>
-        <div className='container text-center'>
-          <p>
-            &copy; 2020 mopar.com.ua
-          </p>
-        </div>
-      </div>
+
     </div>
   )
 }
