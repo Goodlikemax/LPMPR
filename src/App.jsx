@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { Navigation } from './components/navigation'
 import { Header } from './components/header'
 import { Features } from './components/features'
@@ -11,8 +12,13 @@ import {InfoBlock1} from "./components/infoBlock1";
 import { Testimonials } from './components/testimonials'
 import { Team } from './components/Team'
 import { Contact } from './components/contact'
+import {Footer} from "./components/footer";
 import JsonData from './data/data.json'
 import SmoothScroll from 'smooth-scroll'
+import Recaptcha from 'react-recaptcha'
+import Carousels from './components/carousels';
+
+
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -37,7 +43,11 @@ const App = () => {
       {/*<Services data={landingPageData.Services} />*/}
       {/*<Testimonials data={landingPageData.Testimonials} />*/}
       {/*<Team data={landingPageData.Team} />*/}
+      <Carousels />
       <Contact data={landingPageData.Contact} />
+
+      <Footer data={landingPageData.Footer} />
+
     </div>
   )
 }
