@@ -70,7 +70,7 @@ class Carousels extends Component {
                         minimumTouchDrag={80}
                         renderButtonGroupOutside={false}
                         renderDotsOutside={false}
-                        showDots
+
                         sliderClass=""
                         slidesToSlide={1}
                         swipeable
