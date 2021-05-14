@@ -17,7 +17,8 @@ import JsonData from './data/data.json'
 import SmoothScroll from 'smooth-scroll'
 import Recaptcha from 'react-recaptcha'
 import Carousels from './components/carousels';
-
+import {Route, Router, Switch} from "react-router";
+import {createBrowserHistory} from 'history'
 
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -32,23 +33,55 @@ const App = () => {
   }, [])
 
   return (
-    <div>
-      <Navigation />
-      <Header data={landingPageData.Header} />
-      <Features data={landingPageData.Features} />
-      <About data={landingPageData.About} />
-      <Shipping data={landingPageData.Shipping} />
-      <Guarantee data={landingPageData.Guarantee} />
-        {/*<InfoBlock1 data={landingPageData.InfoBlock1} />*/}
-      {/*<Services data={landingPageData.Services} />*/}
-      {/*<Testimonials data={landingPageData.Testimonials} />*/}
-      {/*<Team data={landingPageData.Team} />*/}
-      <Carousels />
-      <Contact data={landingPageData.Contact} />
 
-      <Footer data={landingPageData.Footer} />
+      <Router history={createBrowserHistory()}>
+         <Switch>
+          <Route exact path="/">
+          <div>
+              <Navigation />
+              <Header data={landingPageData.Header} />
+              <Features data={landingPageData.Features} />
+              <About data={landingPageData.About} />
+              <Shipping data={landingPageData.Shipping} />
+              <Guarantee data={landingPageData.Guarantee} />
+              {/*<InfoBlock1 data={landingPageData.InfoBlock1} />*/}
+              {/*<Services data={landingPageData.Services} />*/}
+              {/*<Testimonials data={landingPageData.Testimonials} />*/}
+              {/*<Team data={landingPageData.Team} />*/}
+              <Carousels />
+              <Contact data={landingPageData.Contact} />
 
-    </div>
+              <Footer data={landingPageData.Footer} />
+          </div>
+          </Route>
+          <Route path="/about">
+              <div>
+                  <Navigation />
+                  <InfoBlock1/>
+                  <Contact />
+                  <Footer />
+              </div>
+          </Route>
+         </Switch>
+      </Router>
+
+    // <div>
+    //   <Navigation />
+    //   <Header data={landingPageData.Header} />
+    //   <Features data={landingPageData.Features} />
+    //   <About data={landingPageData.About} />
+    //   <Shipping data={landingPageData.Shipping} />
+    //   <Guarantee data={landingPageData.Guarantee} />
+    //     {/*<InfoBlock1 data={landingPageData.InfoBlock1} />*/}
+    //   {/*<Services data={landingPageData.Services} />*/}
+    //   {/*<Testimonials data={landingPageData.Testimonials} />*/}
+    //   {/*<Team data={landingPageData.Team} />*/}
+    //   <Carousels />
+    //   <Contact data={landingPageData.Contact} />
+    //
+    //   <Footer data={landingPageData.Footer} />
+    //
+    // </div>
   )
 }
 

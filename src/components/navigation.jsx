@@ -39,27 +39,27 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a href='#features' className='page-scroll'>
+              <a href='/#features' className='page-scroll'>
                 Переваги
               </a>
             </li>
             <li>
-              <a href='#about' className='page-scroll'>
+              <a href='/#about' className='page-scroll'>
                 Про нас
               </a>
             </li>
             <li>
-              <a href='#shipping' className='page-scroll'>
+              <a href='/#shipping' className='page-scroll'>
                 Доставка
               </a>
             </li>
             <li>
-              <a href='#guarantee' className='page-scroll'>
+              <a href='/#guarantee' className='page-scroll'>
                 Гарантія
               </a>
             </li>
             <li>
-              <a href='#contact' className='page-scroll'>
+              <a href='/#contact' className='page-scroll'>
                 Контакти
               </a>
             </li>
