@@ -1,6 +1,7 @@
 export const Navigation = (props) => {
+
   return (
-    <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
+    <nav id='menu' className='navbar navbar-expand-custom navbar-default navbar-fixed-top'>
       <div className='container'>
         <div className='navbar-header'>
           <button
@@ -39,27 +40,27 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a href='/#features' className='page-scroll'>
+              <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" href='/#features' className='page-scroll' >
                 Переваги
               </a>
             </li>
             <li>
-              <a href='/#about' className='page-scroll'>
+              <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" href='/#about' className='page-scroll'>
                 Про нас
               </a>
             </li>
             <li>
-              <a href='/#shipping' className='page-scroll'>
+              <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" href='/#shipping' className='page-scroll'>
                 Доставка
               </a>
             </li>
             <li>
-              <a href='/#guarantee' className='page-scroll'>
+              <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" href='/#guarantee' className='page-scroll'>
                 Гарантія
               </a>
             </li>
             <li>
-              <a href='/#contact' className='page-scroll'>
+              <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" href='/#contact' className='page-scroll'>
                 Контакти
               </a>
             </li>

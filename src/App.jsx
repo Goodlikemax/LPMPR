@@ -58,8 +58,8 @@ const App = () => {
               <div>
                   <Navigation />
                   <InfoBlock1/>
-                  <Contact />
-                  <Footer />
+                  <Contact data={landingPageData.Contact} />
+                  <Footer data={landingPageData.Footer} />
               </div>
           </Route>
          </Switch>
